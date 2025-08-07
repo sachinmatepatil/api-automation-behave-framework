@@ -1,3 +1,5 @@
+import json
+
 from behave import given, when, then
 import requests
 from config import BASE_URL
@@ -13,6 +15,19 @@ def step_set_base_url(context):
 def step_send_get_request(context, endpoint):
     url = f"{context.base_url}{endpoint}"
     context.response = APIRequest.get(url)
+
+
+@when('I send a GET request to booking from "{data_file}"')
+def step_external_data(context, data_file):
+    with open(data_file, 'r') as file:
+        b_id = json.load(file)
+
+    for i in b_id:
+        bookingid = i["bookingid"]
+        url = f"{context.base_url}/booking/{bookingid}"
+        context.response = APIRequest.get(url)
+        assert context.response.status_code == 200, \
+            f"Failed to get details for {bookingid}"
 
 
 @then('the response status code should be 200')
