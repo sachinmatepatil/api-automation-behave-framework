@@ -31,7 +31,7 @@ jobs:
       - name: Run Behave Tests
         run: |
           behave -f allure_behave.formatter:AllureFormatter -o reports/allure-results
-          continue-on-error:true
+        continue-on-error: true
 
       # 5. Upload Allure Results to GitHub Artifacts
       - name: Upload Allure Results
