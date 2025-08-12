@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1024","Verify GET /booking/<id> from external JSON","","Wed Aug 13 04:34:26 IST 2025","failed","Wed Aug 13 04:34:27 IST 2025","","","",""
+"","1694","Verify GET /booking API","","Wed Aug 13 04:34:23 IST 2025","passed","Wed Aug 13 04:34:25 IST 2025","","","",""
+"","971","Verify GET /booking/2742 API -- @1.1 ","","Wed Aug 13 04:34:25 IST 2025","failed","Wed Aug 13 04:34:26 IST 2025","","","",""
