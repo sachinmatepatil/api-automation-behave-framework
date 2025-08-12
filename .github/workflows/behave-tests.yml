@@ -32,9 +32,9 @@ jobs:
         run: |
           behave -f allure_behave.formatter:AllureFormatter -o reports/allure-results
 
-      # 5. Upload Allure Results to GitHub Artifact
+      # 5. Upload Allure Results to GitHub Artifacts
       - name: Upload Allure Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: allure-results
           path: reports/allure-results
