@@ -1,7 +1,5 @@
 import json
-
 from behave import given, when, then
-import requests
 from config import BASE_URL
 from utils.request_helper import APIRequest
 
@@ -34,3 +32,5 @@ def step_external_data(context, data_file):
 def step_validate_status_code(context):
     assert context.response.status_code == 200, \
         f"Expected 200 but got {context.response.status_code}"
+
+
