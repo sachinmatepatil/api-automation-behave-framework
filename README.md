@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 Create a .env file in root:
 
-BASE_URL=https://restful-booker.herokuapp.com/
+BASE_URL=https://restful-booker.herokuapp.com
 
 4. Run tests with Allure output
 
@@ -120,6 +120,9 @@ How are reports generated? → Using allure-behave formatter + CLI tool
 What’s unique about this framework? → Real-world structure + BDD + CI/CD integration
 
 ✅ To Do (Next Phases)
+
+
+
 
 
 Made with 💻 by Sachin Mate
