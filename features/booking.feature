@@ -19,3 +19,4 @@ Feature: Users API testing
     Given the API base URL is set
     When I send a GET request to booking from "test_data/b_id.json"
     Then the response status code should be 200
+
