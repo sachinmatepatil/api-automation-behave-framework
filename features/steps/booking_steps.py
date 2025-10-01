@@ -3,6 +3,12 @@ from behave import given, when, then
 from config import BASE_URL
 from utils.request_helper import APIRequest
 
+from utils.assertions import (
+    assert_status_code,
+    assert_schema,
+    assert_header_present,
+    assert_key_in_response
+)
 
 @given('the API base URL is set')
 def step_set_base_url(context):
@@ -34,3 +40,10 @@ def step_validate_status_code(context):
         f"Expected 200 but got {context.response.status_code}"
 
 
+@then('the response should be valid')
+def step_validate_response(context):
+    response = context.response
+    assert_status_code(response, 200)
+    assert_header_present(response, "Content-Type")
+    assert_key_in_response(response, ["id","email"])
+    assert_schema(response.json, "schemas/user_schema.json")

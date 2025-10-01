@@ -7,3 +7,5 @@ def step_impl(context):
     context.token = get_token()
     assert context.token is not None
     print("Token generated:", context.token)
+
+
