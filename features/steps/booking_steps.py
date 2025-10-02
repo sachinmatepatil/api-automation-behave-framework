@@ -2,7 +2,14 @@ import json
 from behave import given, when, then
 from config import BASE_URL
 from utils.request_helper import APIRequest
+from utils.api_helper import get_with_retry, post_with_retry
 
+from utils.assertions import (
+    assert_status_code,
+    assert_schema,
+    assert_header_present,
+    assert_key_in_response
+)
 
 @given('the API base URL is set')
 def step_set_base_url(context):
@@ -13,6 +20,7 @@ def step_set_base_url(context):
 def step_send_get_request(context, endpoint):
     url = f"{context.base_url}{endpoint}"
     context.response = APIRequest.get(url)
+    context.response = get_with_retry(url)
 
 
 @when('I send a GET request to booking from "{data_file}"')
@@ -34,3 +42,10 @@ def step_validate_status_code(context):
         f"Expected 200 but got {context.response.status_code}"
 
 
+@then('the response should be valid')
+def step_validate_response(context):
+    response = context.response
+    assert_status_code(response, 200)
+    assert_header_present(response, "Content-Type")
+    assert_key_in_response(response, ["id","email"])
+    assert_schema(response.json, "schemas/user_schema.json")

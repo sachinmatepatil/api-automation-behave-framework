@@ -4,6 +4,7 @@ Feature: Users API testing
     Given the API base URL is set
     When I send a GET request to "/booking"
     Then the response status code should be 200
+    And the response should be valid
 
 
   Scenario Outline: Verify GET /booking/<id> API

@@ -8,6 +8,10 @@ This is a BDD-style API automation framework built using Python, Behave, and All
 
 ✅ Data-driven testing support
 
+✅ Advanced validations (headers, schema, response structure)
+
+✅ Retry mechanism & timeout handling
+
 ✅ Allure reporting for HTML reports
 
 ✅ Logging with timestamps
@@ -20,36 +24,18 @@ This is a BDD-style API automation framework built using Python, Behave, and All
 
 🔧 Technologies Used
 
-Tool
-
-Purpose
-
-Python
-
-Core scripting language
-
-Behave
-
-BDD framework
-
-Requests
-
-API calls
-
-Allure
-
-HTML test reporting
-
-GitHub Actions
-
-CI/CD automation
-
-dotenv
-
-Environment variable management
+| Tool           | Purpose                       |
+|----------------|-------------------------------|
+| Python         | Core scripting language       |
+| Behave         | BDD framework                 |
+| Requests       | API calls                     |
+| Allure         | HTML test reporting           |
+| GitHub Actions | CI/CD automation              |
+| dotenv         | Environment variable management |
 
 📁 Project Structure
 
+```bash
 behave-api-testing-framework/
 ├── features/
 │   ├── steps/                  # Step definitions (Python)
@@ -58,72 +44,95 @@ behave-api-testing-framework/
 ├── reports/
 │   └── allure-results/        # Raw test results for Allure
 ├── utils/
-│   └── logger.py              # Central logging setup
+│   ├── logger.py              # Central logging setup
+│   ├── api_helper.py          # Request handlers with retry, timeout
+│   └── token_manager.py       # Token-based authentication support
 ├── .env                       # Base URL and secrets
 ├── requirements.txt           # Dependencies
 └── .github/workflows/         # GitHub Actions workflow
+```
 
 🚀 Getting Started
 
 1. Clone the repository
 
+```bash
 git clone git@github.com:your-username/behave-api-testing-framework.git
 cd behave-api-testing-framework
+```
 
 2. Install dependencies
 
+```bash
 pip install -r requirements.txt
+```
 
 3. Add .env file
 
-Create a .env file in root:
+Create a `.env` file in root:
+
 
 BASE_URL=https://restful-booker.herokuapp.com
 
+
 4. Run tests with Allure output
 
+```bash
 behave -f allure_behave.formatter:AllureFormatter -o reports/allure-results
+```
 
 5. Generate Allure HTML report
 
+```bash
 allure generate reports/allure-results -o reports/allure-report --clean
 allure open reports/allure-report
+```
 
 🤖 GitHub Actions – CI/CD
 
 On every push to main, GitHub Actions:
 
-Sets up Python
-
-Installs dependencies
-
-Runs Behave tests
-
-Uploads Allure result artifacts
+- Sets up Python
+- Installs dependencies
+- Runs Behave tests
+- Uploads Allure result artifacts
 
 Sample workflow:
 
-.github/workflows/behave-tests.yml
+`.github/workflows/behave-tests.yml`
+
+```yaml
+name: Run Behave Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: behave -f allure_behave.formatter:AllureFormatter -o reports/allure-results
+```
 
 📊 Logging
 
-Logging is handled via logger.py:
+Logging is handled via `logger.py`:
 
+```log
 2025-08-31 14:30:22 - INFO - Base URL is set to https://jsonplaceholder.typicode.com
-
-❓ FAQs
-
-How do you manage environment configs? → Using .env + dotenv
-
-How are reports generated? → Using allure-behave formatter + CLI tool
-
-What’s unique about this framework? → Real-world structure + BDD + CI/CD integration
-
-✅ To Do (Next Phases)
-
+```
 
 
 
 
 Made with 💻 by Sachin Mate
-
