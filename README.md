@@ -71,11 +71,9 @@ pip install -r requirements.txt
 
 Create a `.env` file in root:
 
-```
-BASE_URL=https://restful-booker.herokuapp.com/
-EMAIL=admin
-PASSWORD=password123
-```
+
+BASE_URL=https://restful-booker.herokuapp.com
+
 
 4. Run tests with Allure output
 
@@ -133,5 +131,8 @@ Logging is handled via `logger.py`:
 ```log
 2025-08-31 14:30:22 - INFO - Base URL is set to https://jsonplaceholder.typicode.com
 ```
+
+
+
 
 Made with 💻 by Sachin Mate
