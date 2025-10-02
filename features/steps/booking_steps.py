@@ -2,6 +2,7 @@ import json
 from behave import given, when, then
 from config import BASE_URL
 from utils.request_helper import APIRequest
+from utils.api_helper import get_with_retry, post_with_retry
 
 from utils.assertions import (
     assert_status_code,
@@ -19,6 +20,7 @@ def step_set_base_url(context):
 def step_send_get_request(context, endpoint):
     url = f"{context.base_url}{endpoint}"
     context.response = APIRequest.get(url)
+    context.response = get_with_retry(url)
 
 
 @when('I send a GET request to booking from "{data_file}"')
