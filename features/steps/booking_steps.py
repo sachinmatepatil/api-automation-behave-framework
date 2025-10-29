@@ -11,6 +11,7 @@ from utils.assertions import (
     assert_key_in_response
 )
 
+
 @given('the API base URL is set')
 def step_set_base_url(context):
     context.base_url = BASE_URL
@@ -47,5 +48,5 @@ def step_validate_response(context):
     response = context.response
     assert_status_code(response, 200)
     assert_header_present(response, "Content-Type")
-    assert_key_in_response(response, ["id","email"])
+    assert_key_in_response(response, ["id", "email"])
     assert_schema(response.json, "schemas/user_schema.json")
