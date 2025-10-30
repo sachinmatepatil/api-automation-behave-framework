@@ -125,9 +125,7 @@ jobs:
 ```
 
 📊 Logging
-
 Logging is handled via `logger.py`:
-
 ```log
 2025-08-31 14:30:22 - INFO - Base URL is set to https://jsonplaceholder.typicode.com
 ```
