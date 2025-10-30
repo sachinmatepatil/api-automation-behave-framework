@@ -227,3 +227,78 @@
 2025-10-01 16:30:00,740 - INFO - Sending GET request to https://restful-booker.herokuapp.com/auth/booking/1
 2025-10-01 16:30:01,859 - INFO - Response Code: 404
 2025-10-01 16:30:01,860 - INFO - Response Body: Not Found
+2025-10-30 05:46:49,559 - INFO - Sending GET request to https://restful-booker.herokuapp.com/auth/booking
+2025-10-30 05:46:51,378 - INFO - Response Code: 404
+2025-10-30 05:46:51,379 - INFO - Response Body: Not Found
+2025-10-30 05:46:51,380 - INFO - GET Attempt 1 to https://restful-booker.herokuapp.com/auth/booking
+2025-10-30 05:46:52,913 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/auth/booking
+2025-10-30 05:46:53,918 - INFO - GET Attempt 2 to https://restful-booker.herokuapp.com/auth/booking
+2025-10-30 05:46:55,180 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/auth/booking
+2025-10-30 05:46:56,183 - INFO - GET Attempt 3 to https://restful-booker.herokuapp.com/auth/booking
+2025-10-30 05:46:57,727 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/auth/booking
+2025-10-30 05:46:58,748 - INFO - Sending GET request to https://restful-booker.herokuapp.com/authbooking/2742
+2025-10-30 05:47:00,283 - INFO - Response Code: 404
+2025-10-30 05:47:00,283 - INFO - Response Body: Not Found
+2025-10-30 05:47:00,283 - INFO - GET Attempt 1 to https://restful-booker.herokuapp.com/authbooking/2742
+2025-10-30 05:47:02,232 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/2742
+2025-10-30 05:47:03,233 - INFO - GET Attempt 2 to https://restful-booker.herokuapp.com/authbooking/2742
+2025-10-30 05:47:05,406 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/2742
+2025-10-30 05:47:06,412 - INFO - GET Attempt 3 to https://restful-booker.herokuapp.com/authbooking/2742
+2025-10-30 05:47:08,580 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/2742
+2025-10-30 05:47:09,598 - INFO - Sending GET request to https://restful-booker.herokuapp.com/auth/booking/1
+2025-10-30 05:47:10,832 - INFO - Response Code: 404
+2025-10-30 05:47:10,833 - INFO - Response Body: Not Found
+2025-10-30 05:47:10,838 - INFO - Sending GET request to https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:47:12,472 - INFO - Response Code: 404
+2025-10-30 05:47:12,473 - INFO - Response Body: Not Found
+2025-10-30 05:47:12,473 - INFO - GET Attempt 1 to https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:47:14,417 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:47:15,423 - INFO - GET Attempt 2 to https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:47:16,670 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:47:17,675 - INFO - GET Attempt 3 to https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:47:20,153 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:47:21,177 - INFO - Sending GET request to https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:47:22,472 - INFO - Response Code: 404
+2025-10-30 05:47:22,473 - INFO - Response Body: Not Found
+2025-10-30 05:47:22,474 - INFO - GET Attempt 1 to https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:47:24,247 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:47:25,254 - INFO - GET Attempt 2 to https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:47:27,218 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:47:28,224 - INFO - GET Attempt 3 to https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:47:29,658 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:47:30,673 - INFO - Sending GET request to https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:47:33,258 - INFO - Response Code: 404
+2025-10-30 05:47:33,258 - INFO - Response Body: Not Found
+2025-10-30 05:47:33,259 - INFO - GET Attempt 1 to https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:47:35,306 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:47:36,311 - INFO - GET Attempt 2 to https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:47:38,073 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:47:39,079 - INFO - GET Attempt 3 to https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:47:41,244 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:48:31,844 - INFO - Sending GET request to https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:48:33,777 - INFO - Response Code: 404
+2025-10-30 05:48:33,777 - INFO - Response Body: Not Found
+2025-10-30 05:48:33,778 - INFO - GET Attempt 1 to https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:48:35,310 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:48:36,315 - INFO - GET Attempt 2 to https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:48:37,551 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:48:38,556 - INFO - GET Attempt 3 to https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:48:41,147 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/99999
+2025-10-30 05:48:42,172 - INFO - Sending GET request to https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:48:43,709 - INFO - Response Code: 404
+2025-10-30 05:48:43,710 - INFO - Response Body: Not Found
+2025-10-30 05:48:43,711 - INFO - GET Attempt 1 to https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:48:45,861 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:48:46,868 - INFO - GET Attempt 2 to https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:48:49,445 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:48:50,451 - INFO - GET Attempt 3 to https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:48:52,097 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/-12
+2025-10-30 05:48:53,118 - INFO - Sending GET request to https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:48:54,870 - INFO - Response Code: 404
+2025-10-30 05:48:54,871 - INFO - Response Body: Not Found
+2025-10-30 05:48:54,872 - INFO - GET Attempt 1 to https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:48:56,836 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:48:57,840 - INFO - GET Attempt 2 to https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:48:59,274 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:49:00,278 - INFO - GET Attempt 3 to https://restful-booker.herokuapp.com/authbooking/asd
+2025-10-30 05:49:02,245 - WARNING - Request failed: 404 Client Error: Not Found for url: https://restful-booker.herokuapp.com/authbooking/asd
