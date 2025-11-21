@@ -14,9 +14,9 @@ class APIRequest:
         return response
 
     @staticmethod
-    def post(url, data=None, headers=None):
+    def post(url, data=None, json=None, headers=None, params=None, **kwargs):
         logger.info(f"Sending POST request to {url} with payload: {data}")
-        response = requests.post(url, json=data, headers=headers)
+        response = requests.post(url, data=data, json=json, headers=headers, params=params, **kwargs)
         logger.info(f"Response Code: {response.status_code}")
         logger.info(f"Response Body: {response.text}")
         return response
