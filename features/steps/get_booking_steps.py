@@ -20,36 +20,8 @@ def step_set_base_url(context):
 @when('I send a GET request to "{endpoint}"')
 def step_send_get_request(context, endpoint):
     context.endpoint = endpoint
-
-    resolved_endpoint = endpoint
-    if "{booking_id}" in endpoint:
-        booking_id = getattr(context, "booking_id", None)
-        assert booking_id is not None, "booking_id was not set before request"
-        resolved_endpoint = endpoint.replace("{booking_id}", str(booking_id))
-
-    url = build_url(context.base_url, resolved_endpoint)
-    response = APIRequest.get(url)
-
-    should_skip_fallback = "negative" in getattr(context, "tags", [])
-
-    if (
-        response.status_code == 404
-        and resolved_endpoint.startswith("booking/")
-        and not should_skip_fallback
-    ):
-        # Fallback to the first available booking id to keep the test stable
-        list_response = APIRequest.get(build_url(context.base_url, "/booking"))
-        assert list_response.status_code == 200, "Unable to fetch booking list for fallback"
-
-        booking_list = list_response.json()
-        assert booking_list, "No bookings available for fallback lookup"
-
-        fallback_id = booking_list[0]["bookingid"]
-        url = build_url(context.base_url, f"booking/{fallback_id}")
-        response = APIRequest.get(url)
-        context.booking_id = fallback_id
-
-    context.response = response
+    url = build_url(context.base_url, endpoint)
+    context.response = APIRequest.get(url)
 
 
 @when('I send a GET request to booking from "{data_file}"')
@@ -63,11 +35,8 @@ def step_external_data(context, data_file):
     booking_list = list_response.json()
     assert booking_list, "Booking list is empty"
 
-    total_to_fetch = len(requested_ids)
-    booking_ids = [entry["bookingid"] for entry in booking_list[:total_to_fetch]]
-    assert booking_ids, "No booking IDs available for validation"
-
-    for bookingid in booking_ids:
+    for i in b_id:
+        bookingid = i["bookingid"]
         url = build_url(context.base_url, f"booking/{bookingid}")
         context.response = APIRequest.get(url)
         assert context.response.status_code == 200, \
