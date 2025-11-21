@@ -22,9 +22,21 @@ def assert_header_present(response, header_key):
 # 🔹 This checks if all the expected keys exist in the JSON response body.
 def assert_key_in_response(response, expected_keys: list):
     response_json = response.json()
-    missing_keys = [key for key in expected_keys if key not in response_json]
     logging.info(f"Checking keys: {expected_keys}")
-    assert not missing_keys, f"Missing keys in response: {missing_keys}"
+
+    if isinstance(response_json, list):
+        missing_indices = [
+            idx for idx, item in enumerate(response_json)
+            if not isinstance(item, dict) or any(key not in item for key in expected_keys)
+        ]
+        assert not missing_indices, (
+            f"Missing keys {expected_keys} in response items at positions {missing_indices}"
+        )
+    elif isinstance(response_json, dict):
+        missing_keys = [key for key in expected_keys if key not in response_json]
+        assert not missing_keys, f"Missing keys in response: {missing_keys}"
+    else:
+        raise AssertionError("Response JSON must be a list or dictionary")
 
 
 # 🔹 This function checks if the structure of the response matches the schema.
