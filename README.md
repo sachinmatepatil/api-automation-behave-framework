@@ -134,3 +134,11 @@ Logging is handled via `logger.py`:
 
 
 Made with 💻 by Sachin Mate
+
+🌐 GitHub Pages
+
+This repository now publishes the contents of the `docs/` folder to GitHub Pages via `.github/workflows/pages.yml`. To enable it:
+1. Open **Settings → Pages** and choose **GitHub Actions** as the source.
+2. Push to `main` (or run the workflow manually) to deploy.
+3. Edit `docs/index.md` (or add additional markdown files) to update the site content.
+

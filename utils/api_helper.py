@@ -1,6 +1,17 @@
 import requests
 import logging
 from time import sleep
+from urllib.parse import urljoin
+
+
+def build_url(base_url: str, endpoint: str) -> str:
+    """Join a base URL and endpoint ensuring exactly one slash between them."""
+    if not base_url:
+        raise ValueError("Base URL is not set")
+
+    normalized_base = base_url.rstrip('/') + '/'
+    normalized_endpoint = endpoint.lstrip('/')
+    return urljoin(normalized_base, normalized_endpoint)
 
 
 # Reusable GET request with retries and timeout
