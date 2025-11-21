@@ -7,19 +7,21 @@ load_dotenv()
 
 
 def get_token():
-    url = f"{os.getenv('BASE_URL')}"
+    url = f"{os.getenv('BASE_URL')+'/auth'}"
+    email = os.getenv("EMAIL")
+    password = os.getenv("PASSWORD")
     payload = {
         "email": os.getenv("EMAIL"),
         "password": os.getenv("PASSWORD")
     }
 
     print("Token request to:", url)
-    print("Payload:", payload)
+    # print("Payload:", payload)
 
     response = requests.post(url, json=payload)
     response.raise_for_status()
 
     token = response.json().get("token")
-    print("Token received:", token)
+    # print("Token received:", token)
 
     return token
