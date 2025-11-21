@@ -9,4 +9,4 @@ requests==2.32.4
 six==1.17.0
 urllib3==2.5.0
 allure-behave
-
+jsonschema==4.23.0
