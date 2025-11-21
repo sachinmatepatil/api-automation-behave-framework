@@ -1,0 +1,24 @@
+name: conflict-check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  conflict-marker-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fail if merge conflict markers exist
+        run: |
+          if git grep -n "<<<<<<< " -- .; then
+            echo "Found conflict markers (<<<<<<<)."
+            exit 1
+          fi
+          if git grep -n ">>>>>>> " -- .; then
+            echo "Found conflict markers (>>>>>>>)."
+            exit 1
+          fi
+          echo "No merge conflict markers found."
