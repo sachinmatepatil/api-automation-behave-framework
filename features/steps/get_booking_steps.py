@@ -27,7 +27,13 @@ def step_send_get_request(context, endpoint):
 @when('I send a GET request to booking from "{data_file}"')
 def step_external_data(context, data_file):
     with open(data_file, 'r') as file:
-        b_id = json.load(file)
+        requested_ids = json.load(file)
+
+    list_response = APIRequest.get(build_url(context.base_url, "/booking"))
+    assert list_response.status_code == 200, "Failed to retrieve booking list"
+
+    booking_list = list_response.json()
+    assert booking_list, "Booking list is empty"
 
     for i in b_id:
         bookingid = i["bookingid"]
