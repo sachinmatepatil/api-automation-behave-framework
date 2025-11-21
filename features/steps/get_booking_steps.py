@@ -30,7 +30,13 @@ def step_send_get_request(context, endpoint):
     url = build_url(context.base_url, resolved_endpoint)
     response = APIRequest.get(url)
 
-    if response.status_code == 404 and resolved_endpoint.startswith("booking/"):
+    should_skip_fallback = "negative" in getattr(context, "tags", [])
+
+    if (
+        response.status_code == 404
+        and resolved_endpoint.startswith("booking/")
+        and not should_skip_fallback
+    ):
         # Fallback to the first available booking id to keep the test stable
         list_response = APIRequest.get(build_url(context.base_url, "/booking"))
         assert list_response.status_code == 200, "Unable to fetch booking list for fallback"
