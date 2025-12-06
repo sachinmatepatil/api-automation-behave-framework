@@ -13,12 +13,18 @@ jobs:
 
       - name: Fail if merge conflict markers exist
         run: |
-          if git grep -n "<<<<<<< " -- .; then
+          set -e
+          FOUND=0
+          if git grep -n "<<<<<<< " -- . ':!./github/workflows/conflict-check.yml'; then
             echo "Found conflict markers (<<<<<<<)."
-            exit 1
+            FOUND=1
           fi
-          # if git grep -n ">>>>>>> " -- .; then
-          #   echo "Found conflict markers (>>>>>>>)."
-          #   exit 1
-          # fi
-          echo "No merge conflict markers found."
+          if git grep -n ">>>>>>> " -- . ':!./github/workflows/conflict-check.yml'; then
+            echo "Found conflict markers (>>>>>>>)."
+            FOUND=1
+          fi
+          if [ $FOUND -eq 1 ]; then
+            exit 1
+          else
+            echo "No merge conflict markers found."
+          fi
