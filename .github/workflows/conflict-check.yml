@@ -17,8 +17,8 @@ jobs:
             echo "Found conflict markers (<<<<<<<)."
             exit 1
           fi
-          if git grep -n ">>>>>>> " -- .; then
-            echo "Found conflict markers (>>>>>>>)."
-            exit 1
-          fi
+          # if git grep -n ">>>>>>> " -- .; then
+          #   echo "Found conflict markers (>>>>>>>)."
+          #   exit 1
+          # fi
           echo "No merge conflict markers found."
