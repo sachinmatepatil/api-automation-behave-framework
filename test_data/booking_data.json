@@ -1,0 +1,24 @@
+[
+  {
+  "firstName": "Jk",
+    "lastName": "Doe",
+    "totalPrice": 150,
+    "depositPaid": True,
+    "bookingDates": {
+        "checkIn": "2023-10-01",
+        "checkOut": "2023-10-10",
+      "additionalNeeds": "Breakfast"
+    }
+  },
+  {
+  "firstName": "Anna",
+    "lastName": "Smith",
+    "totalPrice": -200,
+    "depositPaid": False,
+    "bookingDates": {
+        "checkIn": "2023-11-05",
+        "checkOut": "2023-11-15",
+      "additionalNeeds": "Late Checkout"
+    }
+}
+]
