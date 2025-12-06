@@ -37,27 +37,6 @@ def step_send_post_request(context, endpoint):
     # Send the POST request and store the response
     context.response = APIRequest.post(url, json=payload)
 
-@when('I send a post request to "{endpoint}" using dataset "{index}>"')
-def step_send_post_request_dataset(context, index):
-    index = int(index)
-
-    # Load JSON test data
-    test_data = load_test_data("booking_data.json")[index]
-
-    payload = {
-        "firstname": test_data["firstname"],
-        "lastname": test_data["lastname"],
-        "totalprice": test_data["totalprice"],
-        "depositpaid": test_data["depositpaid"],
-        "bookingdates": {
-            "checkin": test_data["checkin"],
-            "checkout": test_data["checkout"]
-        },
-        "additionalneeds": test_data["additionalneeds"]
-    }
-
-    url = f"{context.base_url}/booking"
-    context.response = APIRequest.post(url, json=payload)
 
 @then('the response should contain the booking id')
 def step_validate_booking_id(context):
